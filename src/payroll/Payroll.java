@@ -14,7 +14,7 @@ public class Payroll
 {
 
    public double Salary;
-   public double bonus;
+   public double bonus ;
   public String emp;
  
      /**constructor that takes the salary and employee name
@@ -22,10 +22,32 @@ public class Payroll
       */
    public Payroll(double Sal,String givenUser)
         {
-            Salary=Sal;
+            this.setSalary(Sal);
             emp=givenUser;
                  
         }
+   
+   public void setSalary(double salary)
+   { this.bonus = salary / 10;
+       if(salary > 3000)
+       {
+           this.Salary = salary;
+       }
+       else{
+           this.Salary = salary + this.bonus;
+       }
+   }
+   
+   public double getSalary()
+   {
+       return this.Salary;
+   }
+   
+   public String toString()
+   {
+       String toString = this.emp + "\t\t\t" + this.getSalary();
+       return toString;
+   }
       
      
     
